@@ -2,25 +2,30 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoTocapu - Realidad Aumentada</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>NeoTocapu</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     <style>
-        body { margin: 0; overflow: hidden; }
+        body { margin: 0; overflow: hidden; background-color: #000; }
+        .mindar-ui-overlay { z-index: 100; }
+        video { object-fit: cover !important; width: 100vw !important; height: 100vh !important; }
         #cartel-guia {
             position: absolute;
-            top: 20px;
+            top: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.75);
             color: #00ffcc;
-            padding: 10px 20px;
-            border-radius: 20px;
+            padding: 12px 24px;
+            border-radius: 25px;
             font-family: sans-serif;
-            font-size: 14px;
+            font-size: 15px;
+            font-weight: bold;
             z-index: 9999;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            pointer-events: none;
         }
     </style>
 </head>
@@ -39,9 +44,9 @@
     <script>
         const targetEl = document.querySelector('#neotocapu-objetivo');
         targetEl.addEventListener("targetFound", event => {
-            // Ponemos una alerta para confirmar que tu "circuito" detectó el dibujo
             alert("¡NeoTocapu Detectado con éxito!");
-            window.location.href = "https://vickiweb24-star.github.io/Neotocapus/"; 
+            // ACÁ PODÉS REEMPLAZAR POR TU LINK DE FLIPHTML5 EN EL FUTURO
+            window.location.href = "https://fliphtml5.com/"; 
         });
     </script>
 
